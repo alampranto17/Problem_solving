@@ -3,63 +3,51 @@
 
 #include<bits/stdc++.h>
 using namespace std;
-bool visited(string p)
+bool ispal(string s )
 {
-    string a=p;
+    for(int i =0,j=s.size()-1;i<s.size()/2;i++,j--)
+    {
+        if(s[i]!=s[j])
+        {
+            return false;
+        }
 
-   for(int i= a.size()-1,j=0;i>=0;i--,j++)
-   {
-       if(a[i]!=p[j])
-       {
-           return false;
-       }
-   }
+    }
     return true;
 }
-string lengthOfLongestSubstring(string s) {
 
-    if(s.size()==1)
-    {
-    return s;
-    }
-    string substring=s;
-    string f="";
-    cout<<"sub"<<endl;
-    int i=0;
-    int j=s.size()-1;
-    while(i<=j)
-    {
-        cout<<i<< " " <<j<<endl;
-        cout<<"sub"<<endl;
-        if(visited(substring))
+    string longestPalindrome(string p) {
+
+        string a="";
+        for(int i =0;i<p.size();i++)
         {
-            if(substring.size()>f.size())
+            string s="";
+            for(int j=i;j<p.size();j++)
             {
-                f=substring;
+                    s+=p[j];
+                if(ispal(s))
+                {
+                    if(a.size()<s.size())
+                    {
+                        a=s;
+                    }
+
+                }
             }
-            substring=substring.substr(s[i++],s[j--]);
-            cout<<"sub"<<substring<<endl;
         }
-        else
-        {
-            substring=substring.substr(s[i++],s[j--]);
-            cout<<"Sub"<<substring<<endl;
-        }
+
+
+    return a;
+
     }
-
-
-
-        return f;;
-
-            }
 
 
     int main()
     {
-        string s ="adbbcd";
-       // getline(cin,s);
+        string s;
+       getline(cin,s);
 
-       cout<< lengthOfLongestSubstring(s)<<endl;
+       cout<<longestPalindrome(s)<<endl;
 
 
 
