@@ -352,111 +352,192 @@ from numpy.ma.core import ravel, concatenate
 # ------problem solve numpy-----------------
 
 
+#******************************************
+#*              quenstion 1               *           
+#******************************************
 
-# quenstion 1
+# a=np.arange(0,12).reshape(3,4)
+# print(a)
 
+# print("shape : ",np.shape(a))
+# print("Size of : ",np.size(a))
+# print("Dimention ",np.ndim(a))
+# print(a.dtype)
 
-a=np.arange(0,12).reshape(3,4)
-print(a)
+#******************************************
+#*              quenstion 2               *           
+#******************************************
 
-print("shape : ",np.shape(a))
-print("Size of : ",np.size(a))
-print("Dimention ",np.ndim(a))
-print(a.dtype)
+# print(a[1,:],"\n")
 
-# quenstion 2
+# print(a[::,0:3:2],"\n")
 
-print(a[1,:],"\n")
+# print(a[1::,1:3:],"\n")
 
-print(a[::,0:3:2],"\n")
+#******************************************
+#*              quenstion 3               *           
+#******************************************
 
-print(a[1::,1:3:],"\n")
+# b=np.random.randint(1,100,50)
 
-#question 3
+# print(b)
 
-b=np.random.randint(1,100,50)
+# print(np.where(b>50))
+# print(b[b>50])
 
-print(b)
+#******************************************
+#*              quenstion 4               *           
+#******************************************
 
-print(np.where(b>50))
-print(b[b>50])
+# c=np.arange(25).reshape(5,5)
 
-# question 4
+# print(c,"\n")
 
-c=np.arange(25).reshape(5,5)
+# print(c[[0,2,4]],"\n")
+# print(c[:,[1,3]],"\n")
+# print(c[[0,2,4]][:,[1,3]],"\n")
 
-print(c,"\n")
+# # ------------bonus---------
+# # complex using try this
+# # bouns
+# # print(c[np.ix_([0,2,4],[1,3])])
 
-print(c[[0,2,4]],"\n")
-print(c[:,[1,3]],"\n")
-print(c[[0,2,4]][:,[1,3]],"\n")
+#******************************************
+#*              quenstion 5               *           
+#******************************************
 
-# ------------bonus---------
-# complex using try this
-# bouns
-# print(c[np.ix_([0,2,4],[1,3])])
+# add=c+5
+# print(add,"\n")
 
-# question 5
+# print(c*2,"\n")
 
-add=c+5
-print(add,"\n")
+# print(c**2,"\n")
 
-print(c*2,"\n")
+#******************************************
+#*              quenstion 6               *           
+#******************************************
 
-print(c**2,"\n")
+# print(np.sum(c))
+# print(np.cumsum(c))
+# print(np.max(c,axis=0))
+# print(np.mean(c,axis=1))
 
-# question 6
-
-print(np.sum(c))
-print(np.cumsum(c))
-print(np.max(c,axis=0))
-print(np.mean(c,axis=1))
-
-# question 7
-
-
-d=np.random.randint(1,16,16)
-print(d)
-d=np.reshape(d,(4,4))
-print(d)
-
-# question 8
-
-e=np.arange(1,10).reshape(3,3)
-f=np.arange(11,20).reshape(3,3)
-
-print(e)
-print(f)
-
-print(np.vstack((e,f)))
-
-print(np.hstack((e,f)))
-
-q=np.hstack((e,f))
-
-print(np.hsplit(q,2))
-
-# question 9
-
-a=np.array([1,2,3])
-
-h=e+a
-print(h)
-
-# question 10
-
-ra=np.random.randint(1,101,100)
-
-print(np.percentile(ra,25))
-print(np.percentile(ra,50))
-print(np.percentile(ra,75))
-
-print(np.histogram(ra,bins=[0,25,50,75,100]))
+#******************************************
+#*              quenstion 7               *           
+#******************************************
 
 
+# d=np.random.randint(1,16,16)
+# print(d)
+# d=np.reshape(d,(4,4))
+# print(d)
+
+#******************************************
+#*              quenstion 8               *           
+#******************************************
+
+# e=np.arange(1,10).reshape(3,3)
+# f=np.arange(11,20).reshape(3,3)
+
+# print(e)
+# print(f)
+
+# print(np.vstack((e,f)))
+
+# print(np.hstack((e,f)))
+
+# q=np.hstack((e,f))
+
+# print(np.hsplit(q,2))
+
+#******************************************
+#*              quenstion 9               *           
+#******************************************
+
+# a=np.array([1,2,3])
+
+# h=e+a
+# print(h)
+
+#******************************************
+#*              quenstion 10               *           
+#******************************************
+
+# ra=np.random.randint(1,101,100)
+
+# print(np.percentile(ra,25))
+# print(np.percentile(ra,50))
+# print(np.percentile(ra,75))
+
+# print(np.histogram(ra,bins=[0,25,50,75,100]))
+
+#******************************************
+#*              quenstion 11              *           
+#******************************************
+# array=np.arange(0,8)
+
+# array=array.reshape(4,2)
+
+# array=array.astype(np.int16)
+
+# print(array.dtype)
+
+# print(array.shape)
+# print(array.ndim)
+
+# print(array.itemsize)
+
+#******************************************
+#*              quenstion 12              *           
+#******************************************
+
+# sampleArray = np.array([[3 ,6, 9, 12], [15 ,18, 21, 24], [27 ,30, 33, 36], [39 ,42, 45, 48], [51 ,54, 57, 60]])
+
+# print(sampleArray[0::2,1::2])
+
+#******************************************
+#*              quenstion 13              *           
+#******************************************
+
+# arrayOne = np.array([[5, 6, 9], [21 ,18, 27]])
+# arrayTwo = np.array([[15 ,33, 24], [4 ,7, 1]])
+
+# result=arrayOne.__add__(arrayTwo)
+
+# print(np.pow(result,2))
+
+#******************************************
+#*              quenstion 14              *           
+#******************************************
+# array=np.random.randint(10,34,size=(8,3))
+
+# a,b,c,d=np.vsplit(array,4)
+
+# print(a)
+# print(b)
+# print(c)
+# print(d)
+
+#******************************************
+#*              quenstion 15              *           
+#******************************************
+
+print("Printing Original array")
+sampleArray = np.array([[34,43,73],[82,22,12],[53,94,66]]) 
+print (sampleArray)
+print("Array after deleting column 2 on axis 1")
+sampleArray =np.delete(sampleArray , 1, axis = 0) 
+print (sampleArray)
+
+# Inserting a new column (e.g. [[10], [10], [10]]) at column index 1
+new_col = np.array([[10], [8], [10]])
+sampleArray = np.insert(sampleArray, 1, new_col, axis=1)
 
 
-
+arr = np.array([[10,10,10]])
+print("Array after inserting column 2 on axis 1")
+sampleArray = np.append(sampleArray , arr, axis = 0) 
+print (sampleArray)
 
 
 
